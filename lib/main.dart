@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cc206_cashlens/features/dashboard_page.dart';
+import 'package:cc206_cashlens/features/settings_page.dart';
 
 void main() {
   runApp(MyApp());
