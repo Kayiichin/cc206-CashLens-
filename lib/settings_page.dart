@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Feature3());
-}
-
 class Feature3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeDrawer()),
+        );
+        return false; // Prevent default back button behavior
+      },
+      child: Scaffold(
         appBar: AppBar(
-          title: Text('CashLens Settings'),
-           backgroundColor: Colors.blue[900],
+          title: Text('CashLens Settings',
+          style: GoogleFonts.josefinSans()),
+          backgroundColor: Colors.blue[900],
         ),
         body: SettingsList(),
       ),
@@ -133,13 +137,51 @@ class _SettingsListState extends State<SettingsList> {
           alignment: Alignment.center,
           child: Text(
             '© Cashlens Company. All Rights Reserved',
-            style: TextStyle(
+            style: GoogleFonts.josefinSans(
               fontSize: 12,
               color: Colors.grey,
             ),
           ),
         ),
       ],
+    );
+  }
+}
+
+
+
+
+class ConversionBox extends StatelessWidget {
+  final String title;
+  final IconData icon;
+
+  ConversionBox({
+    required this.title,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        children: [
+          Text(
+            title,
+            style: GoogleFonts.josefinSans(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Divider(),
+          Icon(icon, size: 48, color: Colors.blue[900]),
+        ],
+      ),
     );
   }
 }
