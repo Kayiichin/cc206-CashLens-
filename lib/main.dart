@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomeScreen(),
         '/feature1': (context) => Feature1(),
-        //'/feature2': (context) => Feature2(),
-        //'/feature3': (context) => Feature3(),
+        '/feature2': (context) => Feature2(),
+        '/feature3': (context) => Feature3(),
       },
     );
   }
