@@ -1,4 +1,8 @@
+
 import 'package:flutter/material.dart';
+import 'package:cc206_cashlens/settings_page.dart';
+import 'package:cc206_cashlens/components/home_drawer.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Feature2 extends StatelessWidget {
   const Feature2({Key? key}) : super(key: key);
